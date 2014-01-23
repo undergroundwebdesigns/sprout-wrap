@@ -12,27 +12,33 @@ recipes:
 
 # development (general)
 - sprout-osx-base::workspace_directory
-- pivotal_workstation::unix_essentials
+- uwd-sprout-supplement::unix_essentials
 - sprout-osx-git::git_projects
 - pivotal_workstation::git_config_global_defaults
-- sprout-osx-git::git_scripts
+
+# Java (needed for neo4j)
+- sprout-osx-apps::java
 
 # development (rails)
 - sprout-osx-rbenv
-- pivotal_workstation::gem_setup
+- pivotal_workstation::gem_setup # Default settings, no docs & warn if install with sudo
 - pivotal_workstation::mysql
 - pivotal_workstation::postgres
+- pivotal_workstation::memcached
+- pivotal_workstation::nginx
+- uwd-sprout-supplement::neo4j
 - sprout-osx-apps::imagemagick
 - sprout-osx-apps::node_js
 - sprout-osx-apps::qt
 
 # apps
-- pivotal_workstation::screen_sharing_app
 - sprout-osx-apps::shiftit
 - pivotal_workstation::mouse_locator
 - sprout-osx-apps::menumeters
 - sprout-osx-apps::ccmenu
 - sprout-osx-apps::iterm2
+- sprout-osx-apps::adium
+- sprout-osx-apps::flux
 
 # apps (editors)
 - sprout-osx-apps::macvim
@@ -40,12 +46,19 @@ recipes:
 
 - sprout-homebrew
 
+# homesick (imports dotfiles from repo)
+- uwd-sprout-supplement::homesick
+
 node_attributes:
+  mysql_root_password: root
   git_projects:
     -
-      - sprout-wrap
-      - https://github.com/undergroundwebdesigns/uwd-sprout-wrap
   sprout:
+    java:
+      dmg:
+        source: https://drive.google.com/file/d/0ByqyvFSWLQwndEpBR29XM2VVb1k/edit?usp=sharing 
+        volumes_dir: 'JDK 7 Update 51'
+        checksum: 73e9cc08d590021706e117c81bc9a4a9
     homebrew:
       casks:
         - bettertouchtool

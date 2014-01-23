@@ -41,3 +41,10 @@ cookbook 'sprout-osx-rubymine',
 
 cookbook 'sprout-homebrew',
   :git => 'git://github.com/pivotal-sprout/sprout-homebrew.git'
+
+cookbook 'homesick',
+  :git => 'git://github.com/fnichol/chef-homesick.git' 
+
+# TODO: Change to git repo & path:
+cookbook 'uwd-sprout-supplement',
+  :path => '/Users/alexwillemsma/Work/UndergroundWebDesigns/uwd-sprout-supplement'
