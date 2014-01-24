@@ -47,4 +47,4 @@ cookbook 'homesick',
 
 # TODO: Change to git repo & path:
 cookbook 'uwd-sprout-supplement',
-  :path => '/Users/alexwillemsma/Work/UndergroundWebDesigns/uwd-sprout-supplement'
+  :git => 'git://github.com/undergroundwebdesigns/uwd-sprout-supplement.git'
